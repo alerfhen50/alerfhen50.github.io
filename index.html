@@ -1,0 +1,1034 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>totally real cookieclicker.com no fake</title>
+    <style>
+        .cookie{
+            padding: 20px;
+            width: calc(100%*(512/1920));
+            height: calc(100%*(512/940));
+            color: saddlebrown;
+            background-position: -50%;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            translate: -50% -50%;
+        }
+        .cookiebar{
+            width: calc(100%*(750/1920));
+            height: calc(100%*(75/940));
+            background-color: saddlebrown;
+            color: white;
+            text-align: center;
+            font-size: 25px;
+            position: fixed;
+            top: calc(100%*(50/940));
+            left: 50%;
+            translate: -50% 0%;
+        }
+        .cookiecount{
+            width: calc(100%*(750/1920));
+            height: calc(100%*(75/940));
+            color: white;
+            text-align: center;
+            font-size: calc(100vh*(25/940));
+            position: fixed;
+            top: calc(100%*(35/940));
+            left: 50%;
+            translate: -50% 0%;
+        }
+        .cookpersec{
+            width: calc(100%*(750/1920));
+            height: calc(100%*(75/940));
+            color: white;
+            text-align: center;
+            font-size: calc(100vh*(15/940));
+            position: fixed;
+            top: calc(100%*(75/940));
+            left: 50%;
+            translate: -50% 0%;
+        }
+        .shopbackground{
+            width: calc(100%*(400/1920));
+            height: calc(100%*(750/940));
+            overflow-y: scroll;
+            background-color: saddlebrown;
+            color: white;
+            text-align: center;
+            top: 50%;
+            font-size: calc(100vh*(16/940));
+            right: calc(100%*(25/1920));
+            position: fixed;
+            translate: -20px -50%;
+        }
+        .shop_cursor{
+            width: calc(100vw*(350/1920));
+            height: calc(100vh*(100/940));
+            background-color: peru;
+            color: white;
+            position: relative;
+            left: calc(100vw*(25/1920));
+            top: calc(100vh*(25/940));
+            text-align: center;
+            font-size: calc(100vw*(20/1920));
+        }
+        .shop_grandma{
+            width: calc(100vw*(350/1920));
+            height: calc(100vh*(100/940));
+            background-color: peru;
+            color: white;
+            position: relative;
+            left: calc(100vw*(25/1920));
+            top: calc(100vh*(50/940));
+            text-align: center;
+            font-size: calc(100vw*(20/1920));
+        }
+        .shop_cookiefarm{
+            width: calc(100vw*(350/1920));
+            height: calc(100vh*(100/940));
+            background-color: peru;
+            color: white;
+            position: relative;
+            left: calc(100vw*(25/1920));
+            top: calc(100vh*(75/940));
+            text-align: center;
+            font-size: calc(100vw*(20/1920));
+        }
+        .shop_cookiemine{
+            width: calc(100vw*(350/1920));
+            height: calc(100vh*(100/940));
+            background-color: peru;
+            color: white;
+            position: relative;
+            left: calc(100vw*(25/1920));
+            top: calc(100vh*(100/940));
+            text-align: center;
+            font-size: calc(100vw*(20/1920));
+        }
+        .shop_cookiefactory{
+            width: calc(100vw*(350/1920));
+            height: calc(100vh*(100/940));
+            background-color: peru;
+            color: white;
+            position: relative;
+            left: calc(100vw*(25/1920));
+            top: calc(100vh*(125/940));
+            text-align: center;
+            font-size: calc(100vw*(20/1920));
+        }
+        .shop_cookiebank{
+            width: calc(100vw*(350/1920));
+            height: calc(100vh*(100/940));
+            background-color: peru;
+            color: white;
+            position: relative;
+            left: calc(100vw*(25/1920));
+            top: calc(100vh*(150/940));
+            text-align: center;
+            font-size: calc(100vw*(20/1920))
+        }
+        .upgradebackground{
+            width: calc(100%*(750/1920));
+            height: calc(100%*(150/940));
+            background-color: saddlebrown;
+            color: white;
+            position: fixed;
+            left: 50%;
+            top: calc(100%*(750/940));
+            overflow-x: scroll;
+            font-size: calc(100vh*(16/940));
+            text-align: center;
+            translate: -50% 0%;
+        }
+        .upgradeinfo{
+            width: calc(100%*(500/1920));
+            height: calc(100%*(200/940));
+            background-color: saddlebrown;
+            color:white;
+            position: fixed;
+            left: calc(100%*(50/1920));
+            top: calc(100%*(720/940));
+            font-size: calc(100vh*(15/940));
+            text-align: center;
+        }
+        .infobuy{
+            width: calc(100vw*(400/1920));
+            height: calc(100vh*(25/940));
+            position: absolute;
+            left: calc(100vw*(50/1920));
+            top: calc(100vh*(150/940));
+            background-color: white;
+            color: black;
+            text-align: center;
+        }
+        .upgrade_slot1{
+            width: calc(100vh*(50/940));
+            height: calc(100vh*(50/940));
+            background-color: white;
+            color: black;
+            position: absolute;
+            left: calc(100vw*(25/1920));
+            top: 50%;
+            text-align: center;
+        }
+        .upgrade_slot2{
+            width: calc(100vh*(50/940));
+            height: calc(100vh*(50/940));
+            background-color: white;
+            color: black;
+            position: absolute;
+            left: calc(100vw*(50/1920) + (calc(100vh*(50/940)) * 1));
+            top: 50%;
+            text-align: center;
+        }
+        .upgrade_slot3{
+            width: calc(100vh*(50/940));
+            height: calc(100vh*(50/940));
+            background-color: white;
+            color: black;
+            position: absolute;
+            left: calc(100vw*(75/1920) + (calc(100vh*(50/940)) * 2));
+            top: 50%;
+            text-align: center;
+        }
+        .upgrade_slot4{
+            width: calc(100vh*(50/940));
+            height: calc(100vh*(50/940));
+            background-color: white;
+            color: black;
+            position: absolute;
+            left: calc(100vw*(100/1920) + (calc(100vh*(50/940)) * 3));
+            top: 50%;
+            text-align: center;
+        }
+        .upgrade_slot5{
+            width: calc(100vh*(50/940));
+            height: calc(100vh*(50/940));
+            background-color: white;
+            color: black;
+            position: absolute;
+            left: calc(100vw*(125/1920) + (calc(100vh*(50/940)) * 4));
+            top: 50%;
+            text-align: center;
+        }
+        .upgrade_slot6{
+            width: calc(100vh*(50/940));
+            height: calc(100vh*(50/940));
+            background-color: white;
+            color: black;
+            position: absolute;
+            left: calc(100vw*(150/1920) + (calc(100vh*(50/940)) * 5));
+            top: 50%;
+            text-align: center;
+        }
+        .upgrade_slot7{
+            width: calc(100vh*(50/940));
+            height: calc(100vh*(50/940));
+            background-color: white;
+            color: black;
+            position: absolute;
+            left: calc(100vw*(175/1920) + (calc(100vh*(50/940)) * 6));
+            top: 50%;
+            text-align: center;
+        }
+        .upgrade_slot8{
+            width: calc(100vh*(50/940));
+            height: calc(100vh*(50/940));
+            background-color: white;
+            color: black;
+            position: absolute;
+            left: calc(100vw*(200/1920) + (calc(100vh*(50/940)) * 7));
+            top: 50%;
+            text-align: center;
+        }
+        .upgrade_slot9{
+            width: calc(100vh*(50/940));
+            height: calc(100vh*(50/940));
+            background-color: white;
+            color: black;
+            position: absolute;
+            left: calc(100vw*(225/1920) + (calc(100vh*(50/940)) * 8));
+            top: 50%;
+            text-align: center;
+        }
+        .mobilemode{
+            width: calc(100%*(75/1920));
+            height: calc(100%*(75/940));
+            background-color: wheat;
+            position: fixed;
+            right: calc(100%*(50/1920));
+            bottom: calc(100%*(25/940));
+        }
+        .niko{
+            width: calc(100vw*(360/1920));
+            height: calc(100%*(360/940));
+            position: fixed;
+            left: calc(100vw*(50/1920));
+            top: calc(100%*(50/940));
+        }
+    </style>
+</head>
+<body>
+    wow look at this
+    <div>
+        <button class="cookie" id="chocochip">
+            <img src="./images/PerfectCookie.png" style="width: 100%; height: 100%;" alt="cookie" id="chocochipimg">
+        </button>
+    </div>
+    <div class="niko">
+        <img src="./images/Niko.png" style="width: 100%;height: 100%;" alt="NikoOneshot">
+    </div>
+    <div class="cookiebar"></div>
+    <div class="cookiecount">
+        <p id="cookiecounting">cookies:0</p>
+    </div>
+    <div class="cookpersec">
+        <p id="cookiepersec">
+            cookies per second:0
+        </p>
+    </div>
+    <div class="mobilemode" id="themobilemode">
+        <p>></p>
+    </div>
+    <div class="shopbackground">
+        <h1>| -=buildings=- |</h1>
+        <button class="shop_cursor" id="cursor">
+            <p>+0.1cps</p>
+            <p id="cursorquantity">15 cookies|quantity:0</p>
+        </button>
+        <button class="shop_grandma" id="grandma">
+            <p>+1cps</p>
+            <p id="grandmaquantity">100 cookies|quantity:0</p>
+        </button>
+        <button class="shop_cookiefarm" id="cookiefarm">
+            <p>+8cps</p>
+            <p id="farmquantity">1100 cookies|quantity:0</p>
+        </button>
+        <button class="shop_cookiemine" id="cookiemine">
+            <p>+47cps</p>
+            <p id="minequantity">12000 cookies|quantity:0</p>
+        </button>
+        <button class="shop_cookiefactory" id="cookiefactory">
+            <p>+260cps</p>
+            <p id="factoryquantity">130000ps cookies|quantity:0</p>
+        </button>
+        <button class="shop_cookiebank" id="cookiebank">
+            <p>+1400cps</p>
+            <p id="bankquantity">14000000ps cookies|quantity:0</p>
+        </button>
+    </div>
+    <div class="upgradebackground">
+        <h1>-=-=- upgrades -=-=-</h1>
+        <button class="upgrade_slot1" id="slot1">
+            <img src="" style="width: 100%; height: 100%;" alt="" id="slot1img">
+        </button>
+        <button class="upgrade_slot2" id="slot2">
+            <img src="" style="width: 100%; height: 100%;" alt="" id="slot2img">
+        </button>
+        <button class="upgrade_slot3" id="slot3">
+            <img src="" style="width: 100%; height: 100%;" alt="" id="slot3img">
+        </button>
+        <button class="upgrade_slot4" id="slot4">
+            <img src="" style="width: 100%; height: 100%;" alt="" id="slot4img">
+        </button>
+        <button class="upgrade_slot5" id="slot5">
+            <img src="" style="width: 100%; height: 100%;" alt="" id="slot5img">
+        </button>
+        <button class="upgrade_slot6" id="slot6">
+            <img src="" style="width: 100%; height: 100%;" alt="" id="slot6img">
+        </button>
+        <button class="upgrade_slot7" id="slot7">
+            <img src="" style="width: 100%; height: 100%;" alt="" id="slot7img">
+        </button>
+        <button class="upgrade_slot8" id="slot8">
+            <img src="" style="width: 100%; height: 100%;" alt="" id="slot8img">
+        </button>
+        <button class="upgrade_slot9" id="slot9">
+            <img src="" style="width: 100%; height: 100%;" alt="" id="slot9img">
+        </button>
+    </div>
+    <div class="upgradeinfo">
+        <h1 id="selected">selected:none|</h1>
+        <p id="price">price:0 cookies</p>
+        <p id="upginfo">yay</p>
+        <div class="infobuy" id="mobilepurchase">
+            buy
+        </div>
+    </div>
+    <script>
+        let cookiecounter = 0;
+        let cookiespersecond = 0;
+        let cursorpower = 1;
+        let the_list = []
+        const slot1img = document.getElementById('slot1img')
+        const slot2img = document.getElementById('slot2img')
+        const slot3img = document.getElementById('slot3img')
+        const slot4img = document.getElementById('slot4img')
+        const slot5img = document.getElementById('slot5img')
+        const slot6img = document.getElementById('slot6img')
+        const slot7img = document.getElementById('slot7img')
+        const slot8img = document.getElementById('slot8img')
+        const slot9img = document.getElementById('slot9img')
+        function sortupgrades(list){
+            return list.slice().sort((a, b) => a[1] - b[1]);
+        };
+        function addupgrade(upgrade){
+            the_list.push(upgrade);
+            the_list = sortupgrades(the_list);
+            slot1img.src = the_list[0][4];
+            slot2img.src = the_list[1][4];
+            slot3img.src = the_list[2][4];
+            slot4img.src = the_list[3][4];
+            slot5img.src = the_list[4][4];
+            slot6img.src = the_list[5][4];
+            slot7img.src = the_list[6][4];
+            slot8img.src = the_list[7][4];
+            slot9img.src = the_list[8][4];
+        };
+        //1920
+        //945
+        function list_remove(list,index){
+            let thing = index
+            let shit = false
+            while (shit === false){
+                if (list[thing + 1] === undefined){
+                    list.pop()
+                    shit = true
+                } else{
+                    list[thing] = list[thing + 1]
+                    thing += 1
+                };
+            }
+            return list
+        };
+        console.log('cheated cookies taste bad')
+        console.log([window.innerWidth,window.innerHeight])
+        console.log((1920+940)/2)
+        const cookiebutton = document.getElementById('chocochip');
+        const cookieimage = document.getElementById('chocochipimg');
+        const countingcookies = document.getElementById('cookiecounting');
+        const secpercookie = document.getElementById('cookiepersec');
+        const bob = new Worker("cookiescript.js");
+        const mobilepurchase = document.getElementById('mobilepurchase');
+        const mobilemode = document.getElementById('themobilemode');
+        mobilepurchase.style.display = 'none';
+        let mobileboolean = false;
+        let achievements = [false,false,false,false,false,false,false,false,false,false];
+        let multipliers = [1,1,1,1,1,1];
+        let buildingprices = [15,100,1100,12000,130000,1400000];
+        let baseprices = [15,100,1100,12000,130000,1400000];
+        let buildings = [0,0,0,0,0,0];
+        let buildingprofit = [0.1,1,8,47,260,1400]
+        cookiebutton.addEventListener('click',() => {
+            cookiecounter += cursorpower;
+            countingcookies.textContent = 'cookies:' + cookiecounter;
+            secpercookie.textContent = 'cookies per second:' + cookiespersecond;
+            bob.postMessage([cookiecounter,cookiespersecond]);
+        });
+        //-=-=-=-=-=-=-=+=-=-=-=-=--=-\\
+        //          the shop          \\
+        //-=-=-=-=-=-=-=+=-=-=-=-=--=-\\
+        const upgradeinfo = document.getElementById('upginfo');
+        const selected = document.getElementById('selected');
+        const upgradeprice = document.getElementById('price');
+        let selectedindex = undefined
+        let selectingupgrade = true
+        let upgrades = []
+        const cursor = document.getElementById('cursor');
+        const grandma = document.getElementById('grandma');
+        const cookiefarm = document.getElementById('cookiefarm');
+        const cookiemine = document.getElementById('cookiemine');
+        const cookiefactory = document.getElementById('cookiefactory');
+        const cookiebank = document.getElementById('cookiebank');
+        const cursorquantity = document.getElementById('cursorquantity');
+        const grandmaquantity = document.getElementById('grandmaquantity');
+        const farmquantity = document.getElementById('farmquantity');
+        const minequantity = document.getElementById('minequantity');
+        const factoryquantity = document.getElementById('factoryquantity');
+        const bankquantity = document.getElementById('bankquantity');
+        cursor.addEventListener('click',() => {
+            if (mobileboolean === true){
+                selected.textContent = 'selected:cursor'
+                upgradeprice.textContent = 'price:' + buildingprices[0]
+                upgradeinfo.textContent = '+ 0.1 cps  clicks cookies slowly'
+                selectingupgrade = false
+                selectedindex = 'cursor'
+            }else{
+                if (cookiecounter >= buildingprices[0]){
+                    cookiecounter -= buildingprices[0];
+                    buildings[0] += 1;
+                    buildingprices[0] = Math.ceil(baseprices[0] * (1.15**buildings[0]))
+                    cursorquantity.textContent = buildingprices[0] + " cookies|quantity:" + buildings[0];
+                };
+            }
+        });
+        grandma.addEventListener('click',() => {
+            if (mobileboolean === true){
+                selected.textContent = 'selected:Worker'
+                upgradeprice.textContent = 'price:' + buildingprices[1]
+                upgradeinfo.textContent = '+ 1 cps bakes cookies'
+                selectingupgrade = false
+                selectedindex = 'grandma'
+            }else{
+                if (cookiecounter >= buildingprices[1]){
+                    cookiecounter -= buildingprices[1];
+                    buildings[1] += 1;
+                    buildingprices[1] = Math.ceil(baseprices[1] * (1.15**buildings[1]))
+                    grandmaquantity.textContent = buildingprices[1]+" cookies|quantity:" + buildings[1];
+                };
+            }
+        });
+        cookiefarm.addEventListener('click',() => {
+            if (mobileboolean===true){
+                selected.textContent = 'selected:cookie farm'
+                upgradeprice.textContent = 'price:' + buildingprices[2]
+                upgradeinfo.textContent = '+ 1 cps farms cookies???????'
+                selectingupgrade = false
+                selectedindex = 'farm'
+            }else{
+                if (cookiecounter >= buildingprices[2]){
+                    cookiecounter -= buildingprices[2];
+                    buildings[2] += 1;
+                    buildingprices[2] = Math.ceil(baseprices[2] * (1.15**buildings[2]))
+                    farmquantity.textContent = buildingprices[2]+" cookies|quantity:" + buildings[2];
+                };
+            }
+        });
+        cookiemine.addEventListener('click',() => {
+            if (mobileboolean === true){
+                selected.textContent = 'selected:cookie mine'
+                upgradeprice.textContent = 'price:' + buildingprices[3]
+                upgradeinfo.textContent = '+ 8 cps MINES cookies?????????'
+                selectingupgrade = false
+                selectedindex = 'mine'
+            }else{
+                if (cookiecounter >= buildingprices[3]){
+                    cookiecounter -= buildingprices[3];
+                    buildings[3] += 1;
+                    buildingprices[3] = Math.ceil(baseprices[3] * (1.15**buildings[3]))
+                    minequantity.textContent = buildingprices[2]+" cookies|quantity:" + buildings[3];
+                };
+            }
+        });
+        cookiefactory.addEventListener('click',() => {
+            if (mobileboolean === true){
+                selected.textContent = 'selected:cookie factory'
+                upgradeprice.textContent = 'price:' + buildingprices[4]
+                upgradeinfo.textContent = '+ 47 cps cookie factory :D'
+                selectingupgrade = false
+                selectedindex = 'factory'
+            }else{
+                if (cookiecounter >= buildingprices[4]){
+                    cookiecounter -= buildingprices[4];
+                    buildings[4] += 1;
+                    buildingprices[4] = Math.ceil(baseprices[4] * (1.15**buildings[4]))
+                    factoryquantity.textContent = buildingprices[4]+" cookies|quantity:" + buildings[4];
+                };
+            }
+        });
+        cookiebank.addEventListener('click',() => {
+            if (mobileboolean === true){
+                selected.textContent = 'selected:cookie bank'
+                upgradeprice.textContent = 'price:' + buildingprices[5]
+                upgradeinfo.textContent = '+ 260 cps HUH????'
+                selectingupgrade = false
+                selectedindex = 'bank'
+            }else{
+                if (cookiecounter >= buildingprices[5]){
+                    cookiecounter -= buildingprices[5];
+                    buildings[5] += 1;
+                    buildingprices[5] = Math.ceil(baseprices[5] * (1.15**buildings[5]))
+                    bankquantity.textContent = buildingprices[5]+" cookies|quantity:" + buildings[5];
+                };
+            }
+        });
+        //--=-=-=-=+=-=-=-=--\\
+        //  sugar  upgrades  \\
+        //--=-=-=-=+=-=-=-=--\\
+        mobilemode.addEventListener('click',() =>{
+            if (mobilepurchase.style.display === 'none'){
+                mobilepurchase.style.display = 'block';
+                mobileboolean = true;
+            } else{
+                mobilepurchase.style.display = 'none';
+                mobileboolean = false;
+            };
+        });
+        let cursormultiplier = 1;
+        const slot1 = document.getElementById('slot1');
+        const slot2 = document.getElementById('slot2');
+        const slot3 = document.getElementById('slot3');
+        const slot4 = document.getElementById('slot4');
+        const slot5 = document.getElementById('slot5');
+        const slot6 = document.getElementById('slot6');
+        const slot7 = document.getElementById('slot7');
+        const slot8 = document.getElementById('slot8');
+        const slot9 = document.getElementById('slot9');
+        let infoselected = [['none'],0,()=>{
+            console.log('[hyperlink blocked]')
+        },'']
+        slot1.addEventListener('click',() =>{
+            if (mobileboolean === false){
+                if (cookiecounter >= the_list[0][1]){
+                    cookiecounter -= the_list[0][1];
+                    the_list[0][2]();
+                    the_list = list_remove(the_list,0);
+                };
+            } else{
+                if (the_list[0] === undefined) {
+                    upgradeinfo.textContent = ''
+                    selected.textContent = 'selected:none'
+                    upgradeprice.textContent = 'price:none'
+                    selectedindex = undefined
+                } else {
+                    upgradeinfo.textContent = the_list[0][3];
+                    selected.textContent = 'selected:' + the_list[0][0];
+                    upgradeprice.textContent = 'price' + the_list[0][1] + ' cookies';
+                    infoselected = the_list[0]
+                    selectedindex = 0   
+                    selectingupgrade = true
+                }
+            };
+        });
+        slot1.addEventListener('mouseenter',() =>{
+            if (the_list[0] === undefined) {
+                upgradeinfo.textContent = ''
+                selected.textContent = 'selected:none'
+                upgradeprice.textContent = 'price:none'
+                selectedindex = undefined
+            } else {
+                upgradeinfo.textContent = the_list[0][3];
+                selected.textContent = 'selected:' + the_list[0][0];
+                upgradeprice.textContent = 'price' + the_list[0][1] + ' cookies';
+                infoselected = the_list[0]
+                selectedindex = 0
+                selectingupgrade = true
+            }
+        });
+        
+        slot2.addEventListener('click',() =>{
+            if (mobileboolean === false){
+                if (cookiecounter >= the_list[1][1]){
+                    cookiecounter -= the_list[1][1];
+                    the_list[1][2]();
+                    the_list = list_remove(the_list,1);
+                };
+            } else{
+                if (the_list[1] === undefined) {
+                    upgradeinfo.textContent = ''
+                    selected.textContent = 'selected:none'
+                    upgradeprice.textContent = 'price:none'
+                    selectedindex = undefined
+                } else {
+                    upgradeinfo.textContent = the_list[1][3];
+                    selected.textContent = 'selected:' + the_list[1][0];
+                    upgradeprice.textContent = 'price' + the_list[1][1] + ' cookies';
+                    infoselected = the_list[1]
+                    selectedindex = 1
+                    selectingupgrade = true
+                }
+            };
+        });
+        slot2.addEventListener('mouseenter',() =>{
+            if (the_list[1] === undefined) {
+                upgradeinfo.textContent = ''
+                selected.textContent = 'selected:none'
+                upgradeprice.textContent = 'price:none'
+                selectedindex = undefined
+            } else {
+                upgradeinfo.textContent = the_list[1][3];
+                selected.textContent = 'selected:' + the_list[1][0];
+                upgradeprice.textContent = 'price' + the_list[1][1] + ' cookies';
+                infoselected = the_list[1]
+                selectedindex = 1
+                selectingupgrade = true
+            }
+        });
+
+        slot3.addEventListener('click',() =>{
+            if (mobileboolean === false){
+                if (cookiecounter >= the_list[2][1]){
+                    cookiecounter -= the_list[2][1];
+                    the_list[2][2]();
+                    the_list = list_remove(the_list,2);
+                };
+            } else{
+                if (the_list[2] === undefined) {
+                    upgradeinfo.textContent = ''
+                    selected.textContent = 'selected:none'
+                    upgradeprice.textContent = 'price:none'
+                    selectedindex = undefined
+                } else {
+                    upgradeinfo.textContent = the_list[2][3];
+                    selected.textContent = 'selected:' + the_list[2][0];
+                    upgradeprice.textContent = 'price' + the_list[2][1] + ' cookies';
+                    infoselected = the_list[2]
+                    selectedindex = 2
+                    selectingupgrade = true
+                }
+            };
+        });
+        slot3.addEventListener('mouseenter',() =>{
+            if (the_list[2] === undefined) {
+                upgradeinfo.textContent = ''
+                selected.textContent = 'selected:none'
+                upgradeprice.textContent = 'price:none'
+                selectedindex = undefined
+            } else {
+                upgradeinfo.textContent = the_list[2][3];
+                selected.textContent = 'selected:' + the_list[2][0];
+                upgradeprice.textContent = 'price' + the_list[2][1] + ' cookies';
+                infoselected = the_list[2]
+                selectedindex = 2
+                selectingupgrade = true
+            }
+        });
+
+        slot4.addEventListener('click',() =>{
+            if (mobileboolean === false){
+                if (cookiecounter >= the_list[3][1]){
+                    cookiecounter -= the_list[3][1];
+                    the_list[3][2]();
+                    the_list = list_remove(the_list,3);
+                };
+            } else{
+                if (the_list[3] === undefined) {
+                    upgradeinfo.textContent = ''
+                    selected.textContent = 'selected:none'
+                    upgradeprice.textContent = 'price:none'
+                    selectedindex = undefined
+                } else {
+                    upgradeinfo.textContent = the_list[3][3];
+                    selected.textContent = 'selected:' + the_list[3][0];
+                    upgradeprice.textContent = 'price' + the_list[3][1] + ' cookies';
+                    infoselected = the_list[3]
+                    selectedindex = 3
+                    selectingupgrade = true
+                }
+            };
+        });
+        slot4.addEventListener('mouseenter',() =>{
+            if (the_list[3] === undefined) {
+                upgradeinfo.textContent = ''
+                selected.textContent = 'selected:none'
+                upgradeprice.textContent = 'price:none'
+                selectedindex = undefined
+            } else {
+                upgradeinfo.textContent = the_list[3][3];
+                selected.textContent = 'selected:' + the_list[3][0];
+                upgradeprice.textContent = 'price' + the_list[3][1] + ' cookies';
+                infoselected = the_list[3]
+                selectedindex = 3
+                selectingupgrade = true
+            }
+        });
+
+        slot5.addEventListener('click',() =>{
+            if (mobileboolean === false){
+                if (cookiecounter >= the_list[4][1]){
+                    cookiecounter -= the_list[4][1];
+                    the_list[4][2]();
+                    the_list = list_remove(the_list,4);
+                };
+            } else{
+                if (the_list[4] === undefined) {
+                    upgradeinfo.textContent = ''
+                    selected.textContent = 'selected:none'
+                    upgradeprice.textContent = 'price:none'
+                    selectedindex = undefined
+                } else {
+                    upgradeinfo.textContent = the_list[4][3];
+                    selected.textContent = 'selected:' + the_list[4][0];
+                    upgradeprice.textContent = 'price' + the_list[4][1] + ' cookies';
+                    infoselected = the_list[4]
+                    selectedindex = 4
+                    selectingupgrade = true
+                }
+            };
+        });
+        slot5.addEventListener('mouseenter',() =>{
+            if (the_list[4] === undefined) {
+                upgradeinfo.textContent = ''
+                selected.textContent = 'selected:none'
+                upgradeprice.textContent = 'price:none'
+                selectedindex = undefined
+            } else {
+                upgradeinfo.textContent = the_list[4][3];
+                selected.textContent = 'selected:' + the_list[4][0];
+                upgradeprice.textContent = 'price' + the_list[4][1] + ' cookies';
+                infoselected = the_list[4]
+                selectedindex = 4
+                selectingupgrade = true
+            }
+        });
+
+        slot6.addEventListener('click',() =>{
+            if (mobileboolean === false){
+                if (cookiecounter >= the_list[5][1]){
+                    cookiecounter -= the_list[5][1];
+                    the_list[5][2]();
+                    the_list = list_remove(the_list,5);
+                };
+            } else{
+                if (the_list[5] === undefined) {
+                    upgradeinfo.textContent = ''
+                    selected.textContent = 'selected:none'
+                    upgradeprice.textContent = 'price:none'
+                    selectedindex = undefined
+                } else {
+                    upgradeinfo.textContent = the_list[5][3];
+                    selected.textContent = 'selected:' + the_list[5][0];
+                    upgradeprice.textContent = 'price' + the_list[5][1] + ' cookies';
+                    infoselected = the_list[5]
+                    selectedindex = 5
+                    selectingupgrade = true
+                }
+            };
+        });
+        slot6.addEventListener('mouseenter',() =>{
+            if (the_list[5] === undefined) {
+                upgradeinfo.textContent = ''
+                selected.textContent = 'selected:none'
+                upgradeprice.textContent = 'price:none'
+                selectedindex = undefined
+            } else {
+                upgradeinfo.textContent = the_list[5][3];
+                selected.textContent = 'selected:' + the_list[5][0];
+                upgradeprice.textContent = 'price' + the_list[5][1] + ' cookies';
+                infoselected = the_list[5]
+                selectedindex = 5
+                selectingupgrade = true
+            }
+        });
+
+        slot7.addEventListener('click',() =>{
+            if (mobileboolean === false){
+                if (cookiecounter >= the_list[6][1]){
+                    cookiecounter -= the_list[6][1];
+                    the_list[6][2]();
+                    the_list = list_remove(the_list,6);
+                };
+            } else{
+                if (the_list[6] === undefined) {
+                    upgradeinfo.textContent = ''
+                    selected.textContent = 'selected:none'
+                    upgradeprice.textContent = 'price:none'
+                    selectedindex = undefined
+                } else {
+                    upgradeinfo.textContent = the_list[6][3];
+                    selected.textContent = 'selected:' + the_list[6][0];
+                    upgradeprice.textContent = 'price' + the_list[6][1] + ' cookies';
+                    infoselected = the_list[6]
+                    selectedindex = 6
+                    selectingupgrade = true
+                }
+            };
+        });
+        slot7.addEventListener('mouseenter',() =>{
+            if (the_list[6] === undefined) {
+                upgradeinfo.textContent = ''
+                selected.textContent = 'selected:none'
+                upgradeprice.textContent = 'price:none'
+                selectedindex = undefined
+            } else {
+                upgradeinfo.textContent = the_list[6][3];
+                selected.textContent = 'selected:' + the_list[6][0];
+                upgradeprice.textContent = 'price' + the_list[6][1] + ' cookies';
+                infoselected = the_list[6]
+                selectedindex = 6
+                selectingupgrade = true
+            }
+        });
+
+        slot8.addEventListener('click',() =>{
+            if (mobileboolean === false){
+                if (cookiecounter >= the_list[7][1]){
+                    cookiecounter -= the_list[7][1];
+                    the_list[7][2]();
+                    the_list = list_remove(the_list,7);
+                };
+            } else{
+                if (the_list[7] === undefined) {
+                    upgradeinfo.textContent = ''
+                    selected.textContent = 'selected:none'
+                    upgradeprice.textContent = 'price:none'
+                    selectedindex = undefined
+                } else {
+                    upgradeinfo.textContent = the_list[7][3];
+                    selected.textContent = 'selected:' + the_list[7][0];
+                    upgradeprice.textContent = 'price' + the_list[7][1] + ' cookies';
+                    infoselected = the_list[7]
+                    selectedindex = 7
+                    selectingupgrade = true
+                }
+            };
+        });
+        slot8.addEventListener('mouseenter',() =>{
+            if (the_list[7] === undefined) {
+                upgradeinfo.textContent = ''
+                selected.textContent = 'selected:none'
+                upgradeprice.textContent = 'price:none'
+                selectedindex = undefined
+            } else {
+                upgradeinfo.textContent = the_list[7][3];
+                selected.textContent = 'selected:' + the_list[7][0];
+                upgradeprice.textContent = 'price' + the_list[7][1] + ' cookies';
+                infoselected = the_list[7]
+                selectedindex = 7
+                selectingupgrade = true
+            }
+        });
+
+        slot9.addEventListener('click',() =>{
+            if (mobileboolean === false){
+                if (cookiecounter >= the_list[8][1]){
+                    cookiecounter -= the_list[8][1];
+                    the_list[8][2]();
+                    the_list = list_remove(the_list,8);
+                };
+            } else{
+                if (the_list[8] === undefined) {
+                    upgradeinfo.textContent = ''
+                    selected.textContent = 'selected:none'
+                    upgradeprice.textContent = 'price:none'
+                    selectedindex = undefined
+                } else {
+                    upgradeinfo.textContent = the_list[8][3];
+                    selected.textContent = 'selected:' + the_list[8][0];
+                    upgradeprice.textContent = 'price' + the_list[8][1] + ' cookies';
+                    infoselected = the_list[8]
+                    selectingupgrade = true
+                    selectedindex = 8
+                }
+            };
+        });
+        slot9.addEventListener('mouseenter',() =>{
+            if (the_list[8] === undefined) {
+                upgradeinfo.textContent = ''
+                selected.textContent = 'selected:none'
+                upgradeprice.textContent = 'price:none'
+                selectedindex = undefined
+            } else {
+                upgradeinfo.textContent = the_list[8][3];
+                selected.textContent = 'selected:' + the_list[8][0];
+                upgradeprice.textContent = 'price' + the_list[8][1] + ' cookies';
+                selectingupgrade = true
+                infoselected = the_list[8]
+                selectedindex = 8
+            }
+        });
+        mobilepurchase.addEventListener('click',()=>{
+            if (selectingupgrade === true){
+                if (selectedindex === undefined){
+                    console.log('bruh')
+                }else{
+                    if (cookiecounter >= the_list[selectedindex][1]){
+                        cookiecounter -= the_list[selectedindex][1];
+                        the_list[selectedindex][2]();
+                        the_list = list_remove(the_list,selectedindex);
+                    };
+                };
+            }else{
+                if (selectedindex === 'cursor'){
+                    if (cookiecounter >= buildingprices[0]){
+                        cookiecounter -= buildingprices[0];
+                        buildings[0] += 1;
+                        buildingprices[0] = Math.ceil(baseprices[0] * (1.15**buildings[0]))
+                        selected.textContent = 'selected:cursor'
+                        upgradeprice.textContent = 'price:' + buildingprices[0]
+                        upgradeinfo.textContent = '+ 0.1 cps  clicks cookies slowly'
+                        cursorquantity.textContent = buildingprices[0] + " cookies|quantity:" + buildings[0];
+                   };
+                }
+                
+                if (selectedindex === 'grandma'){
+                    if (cookiecounter >= buildingprices[1]){
+                        cookiecounter -= buildingprices[1];
+                        buildings[1] += 1;
+                        buildingprices[1] = Math.ceil(baseprices[1] * (1.15**buildings[1]))
+                        selected.textContent = 'selected:Worker'
+                        upgradeprice.textContent = 'price:' + buildingprices[1]
+                        upgradeinfo.textContent = '+ 1 cps bakes cookies'
+                        grandmaquantity.textContent = buildingprices[1]+" cookies|quantity:" + buildings[1];
+                    };
+                }
+                if (selectedindex === 'farm'){
+                    if (cookiecounter >= buildingprices[2]){
+                        cookiecounter -= buildingprices[2];
+                        buildings[2] += 1;
+                        buildingprices[2] = Math.ceil(baseprices[2] * (1.15**buildings[2]))
+                        selected.textContent = 'selected:cookie farm'
+                        upgradeprice.textContent = 'price:' + buildingprices[2]
+                        upgradeinfo.textContent = '+ 1 cps farms cookies???????'
+                        farmquantity.textContent = buildingprices[2]+" cookies|quantity:" + buildings[2];
+                    };
+                }
+                
+                if (selectedindex === 'mine'){
+                    if (cookiecounter >= buildingprices[3]){
+                        cookiecounter -= buildingprices[3];
+                        buildings[3] += 1;
+                        buildingprices[3] = Math.ceil(baseprices[3] * (1.15**buildings[3]))
+                        selected.textContent = 'selected:cookie mine'
+                        upgradeprice.textContent = 'price:' + buildingprices[3]
+                        upgradeinfo.textContent = '+ 8 cps MINES cookies?????????'
+                        minequantity.textContent = buildingprices[2]+" cookies|quantity:" + buildings[3];
+                        
+                    };
+                }
+
+                if (selectedindex === 'factory'){
+                    if (cookiecounter >= buildingprices[4]){
+                        cookiecounter -= buildingprices[4];
+                        buildings[4] += 1;
+                        buildingprices[4] = Math.ceil(baseprices[4] * (1.15**buildings[4]))
+                        selected.textContent = 'selected:cookie factory'
+                        upgradeprice.textContent = 'price:' + buildingprices[4]
+                        upgradeinfo.textContent = '+ 47 cps cookie factory :D'
+                        factoryquantity.textContent = buildingprices[4]+" cookies|quantity:" + buildings[4];
+                    };
+                }
+
+                if (selectedindex === 'bank'){
+                    if (cookiecounter >= buildingprices[5]){
+                        cookiecounter -= buildingprices[5];
+                        buildings[5] += 1;
+                        buildingprices[5] = Math.ceil(baseprices[5] * (1.15**buildings[5]))
+                        selected.textContent = 'selected:cookie bank'
+                        upgradeprice.textContent = 'price:' + buildingprices[5]
+                        upgradeinfo.textContent = '+ 260 cps HUH????'
+                        bankquantity.textContent = buildingprices[5]+" cookies|quantity:" + buildings[5];
+                    };
+                }
+            }
+        });
+        //--=-=-=-=+=-=-=-=--\\
+        // final calculation \\
+        //--=-=-=-=+=-=-=-=--\\
+        function loop(){
+            let cookiez = 0;
+            let cookiezcoaster = 0;
+            for (let thing in buildings){
+                cookiez += (buildingprofit[cookiezcoaster]*0.033) * buildings[cookiezcoaster] * multipliers[cookiezcoaster];
+                cookiezcoaster += 1;
+            };
+            cookiespersecond = cookiez/0.033;
+            cookiecounter += cookiez;
+            let small_round_boy = cookiecounter
+            small_round_boy *= 100
+            small_round_boy = Math.round(small_round_boy)
+            small_round_boy /= 100
+            countingcookies.textContent = 'cookies:' + small_round_boy;
+            secpercookie.textContent = 'cookies per second:' + cookiespersecond;
+            //stuff//
+
+            setTimeout(() => {
+                loop()
+            }, 33);
+        };
+        loop()
+    </script>
+</body>
+</html>
